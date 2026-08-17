@@ -1,0 +1,525 @@
+.container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.main {
+  width: 100%;
+  max-width: 450px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+.header {
+  margin-bottom: 2.5rem;
+}
+
+.badge {
+  display: inline-block;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  padding: 0.25rem 0.75rem;
+  font-family: var(--font-roboto-mono), monospace;
+  font-size: 0.75rem;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 2rem;
+}
+
+.heroSection {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.heroText {
+  flex: 1;
+}
+
+.heroText h1 {
+  font-size: 2.8rem;
+  line-height: 1.1;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.02em;
+}
+
+.subtitle {
+  color: var(--text-muted);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.heroImagePlaceholder {
+  width: 100px;
+  height: 180px;
+  flex-shrink: 0;
+  /* Leaves empty space for the lightning bolt image */
+}
+
+/* Form */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.label {
+  font-family: var(--font-roboto-mono), monospace;
+  color: var(--accent);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.inputWrapper {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid var(--foreground);
+  padding-bottom: 0.5rem;
+  transition: border-color 0.2s;
+}
+
+.inputWrapper:focus-within {
+  border-bottom-color: var(--accent);
+}
+
+.inputIcon {
+  color: var(--foreground);
+  margin-right: 1rem;
+}
+
+.checkIcon {
+  color: var(--accent);
+  margin-left: auto;
+}
+
+.input {
+  background: transparent;
+  border: none;
+  color: var(--foreground);
+  font-size: 1.1rem;
+  outline: none;
+  width: 100%;
+}
+
+.input::placeholder {
+  color: var(--text-muted);
+}
+
+/* Excitement Level */
+.excitementGrid {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.excitementButton {
+  flex: 1;
+  background: transparent;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  padding: 0.75rem 0.5rem;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 0.9rem;
+}
+
+.excitementButton:hover {
+  border-color: #555;
+}
+
+.excitementButton.active {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.checkboxIcon {
+  color: var(--text-muted);
+}
+
+.checkboxIconActive {
+  color: var(--accent);
+  background: var(--accent);
+  color: black;
+  border-radius: 2px;
+}
+
+/* Submit Button */
+.submitButton {
+  background-color: var(--accent);
+  color: var(--background);
+  border: none;
+  border-radius: 8px;
+  padding: 1.25rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  transition: transform 0.2s, background-color 0.2s;
+  margin-top: 1rem;
+}
+
+.submitButton:hover {
+  background-color: var(--accent-hover);
+  transform: translateY(-2px);
+}
+
+.submitButton:active {
+  transform: translateY(0);
+}
+
+/* Social Proof */
+.socialProof {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.avatars {
+  display: flex;
+  align-items: center;
+}
+
+.avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 2px solid var(--background);
+  background-size: cover;
+  background-position: center;
+  margin-left: -8px;
+}
+.avatar:first-child {
+  margin-left: 0;
+}
+
+.avatarCount {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 2px solid var(--background);
+  background-color: var(--accent);
+  color: var(--background);
+  font-size: 0.65rem;
+  font-weight: 800;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: -8px;
+  z-index: 1;
+}
+
+.socialText {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.highlight {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* New Inline Success View */
+.successView {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  max-width: 440px;
+  margin: 0 auto;
+  animation: fadeIn 0.4s ease-out;
+  padding-bottom: 1rem;
+}
+
+.successView .badge {
+  display: none; /* Hidden on success screen to save space */
+}
+
+.successHero {
+  text-align: center;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.animatedAppIcon {
+  width: 96px;
+  height: auto;
+  border-radius: 24px;
+  margin: 0 auto 1.5rem auto;
+  display: block;
+  box-shadow: 0 0 0 1px rgba(255,255,255,0.1), 0 12px 36px rgba(217, 255, 0, 0.25);
+  animation: bouncePop 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes bouncePop {
+  0% { transform: scale(0.8) translateY(20px); opacity: 0; }
+  50% { transform: scale(1.05) translateY(-5px); opacity: 1; }
+  100% { transform: scale(1) translateY(0); opacity: 1; }
+}
+
+.successTitle {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 0.5rem;
+  line-height: 1.1;
+}
+
+.successSubtitle {
+  color: #a1a1aa;
+  font-size: 1rem;
+  line-height: 1.5;
+  padding: 0 0.5rem;
+}
+
+.successCard {
+  width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-bottom: 1rem;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.cardIconWrapper {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.cardIconWrapper svg {
+  width: 24px;
+  height: 24px;
+}
+
+.cardIcon {
+  color: var(--accent);
+}
+
+.cardContent h3 {
+  font-size: 0.95rem;
+  color: var(--accent);
+  margin-bottom: 0.25rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.cardContent p {
+  color: #a1a1aa;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.successCardTimeline {
+  width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 1.25rem;
+  margin-bottom: 1.5rem;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.timelineHeader {
+  font-size: 0.95rem;
+  color: var(--accent);
+  margin-bottom: 1.25rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+}
+
+.timelineItem {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  position: relative;
+}
+
+.timelineIconWrapper {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+  background: #000;
+  z-index: 2;
+  flex-shrink: 0;
+}
+
+.timelineIconWrapper svg {
+  width: 16px;
+  height: 16px;
+}
+
+.timelineContent h4 {
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.2rem;
+  margin-top: 0.2rem;
+}
+
+.timelineContent p {
+  color: #888;
+  font-size: 0.85rem;
+  margin: 0;
+}
+
+.timelineLine {
+  width: 1px;
+  height: 1rem;
+  border-left: 1px dashed var(--accent);
+  margin-left: 15px;
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+}
+
+.backButton {
+  width: 100%;
+  background: var(--accent);
+  color: #000;
+  border: none;
+  border-radius: 12px;
+  padding: 1.15rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  transition: transform 0.2s, filter 0.2s;
+  margin-bottom: 1rem;
+}
+
+.backButton:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.1);
+}
+
+.backButton:active {
+  transform: translateY(0);
+}
+
+/* Hide redundant elements on success screen to guarantee it fits vertically while preserving premium spacing */
+.socialProofSuccess {
+  display: none;
+}
+
+.footerSuccess {
+  display: none;
+}
+
+.successCheck {
+  color: var(--background);
+}
+
+.successScreen h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.successText {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  line-height: 1.5;
+  max-width: 300px;
+}
+
+/* Footer */
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 3rem;
+  color: var(--text-muted);
+  font-family: var(--font-roboto-mono), monospace;
+  font-size: 0.75rem;
+}
+
+.lockIcon {
+  color: #a8a8a8;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 600px) {
+  .container {
+    padding: 1.5rem 1rem;
+  }
+
+  .heroSection {
+    flex-direction: column;
+  }
+
+  .heroText h1 {
+    font-size: 2.3rem;
+  }
+
+  .heroImagePlaceholder {
+    width: 80px;
+    height: 120px;
+    margin-top: 1rem;
+  }
+
+  .excitementGrid {
+    flex-direction: column;
+  }
+
+  .excitementButton {
+    padding: 1rem;
+  }
+
+  .socialProof {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.8rem;
+  }
+}

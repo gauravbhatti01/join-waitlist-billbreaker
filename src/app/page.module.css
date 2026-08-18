@@ -491,25 +491,34 @@
   }
 
   .heroSection {
-    flex-direction: column;
+    flex-direction: row; /* Keep image on the right */
+    align-items: center;
+    gap: 0.5rem;
   }
 
   .heroText h1 {
-    font-size: 2.3rem;
+    font-size: 2rem;
+    margin-bottom: 1rem;
   }
 
   .heroImagePlaceholder {
-    width: 80px;
-    height: 120px;
-    margin-top: 1rem;
+    width: 55px;
+    height: auto;
+    margin-top: 0;
   }
 
   .excitementGrid {
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.5rem;
   }
 
   .excitementButton {
-    padding: 1rem;
+    padding: 0.6rem 0.5rem;
+    font-size: 0.75rem;
+    /* Use auto so they neatly wrap to 2 rows on extremely tiny screens, but fit 1 row on normal phones */
+    flex: 1 1 auto;
+    min-width: 80px;
   }
 
   .socialProof {
@@ -521,5 +530,19 @@
     flex-direction: column;
     text-align: center;
     gap: 0.8rem;
+  }
+}
+
+/* Extra small devices (like iPhone SE) */
+@media (max-width: 380px) {
+  .heroText h1 {
+    font-size: 1.75rem;
+  }
+  .heroImagePlaceholder {
+    width: 45px;
+  }
+  .excitementButton {
+    font-size: 0.7rem;
+    padding: 0.5rem 0.25rem;
   }
 }
